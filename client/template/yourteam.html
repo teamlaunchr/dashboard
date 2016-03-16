@@ -7,34 +7,39 @@
         {{#each getUsers}}
             {{#if isValidUser}}
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--middle mdl-cell--3-col mdl-cell--12col-phone" style="height:350px">
-                  <div class="mdl-card__title mdl-card--expand" style="background: url('{{services.google.picture}}') center 50% no-repeat #736F6E; color: #fff">
+                  <div class="mdl-card__title mdl-card--expand" style="background: url('{{services.google.picture}}') center 15% no-repeat #736F6E; color: #fff">
                     <h2 class="mdl-card__title-text">{{services.google.name}}</h2>
                   </div>
-                  <div class="mdl-card__supporting-text">
-                    </div>
                             
                   <div class="mdl-card__actions mdl-card--border">
                       
-                        <div id="user-email" class="icon material-icons mdl-js-ripple-effect">email</div>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="user-email">
-                        {{services.google.email}}
-                        </div>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effecth" href="mailto:{{services.google.email}}">
+                            <i class="material-icons" style="vertical-align:center; margin-right: 10px">email</i>    
+                            {{services.google.email}}
+                        </a>
                       
+                  </div>
                                           
-                       {{#if phone}}
-                                <div id="user-phone" class="icon material-icons">phone</div>
-                                <div class="mdl-tooltip mdl-tooltip--large" for="user-phone">
+                        {{#if phone}}
+                <div class="mdl-card__actions mdl-card--border mdl-js-ripple-effect">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effecth" href="mailto:{{services.google.email}}">
+                                <i class="material-icons" style="vertical-align:center; margin-right: 10px">phone</i>    
                                 {{phone}}
-                                </div>
-                        {{else}}
+                            </a>
+                    </div>
+                    {{else}}
                             {{#if isCurrentUser}}
-                                    <div id="user-add-phone" class="icon material-icons mdl-js-ripple-effect">settings_phone</div>
-                                    <div class="mdl-tooltip mdl-tooltip--large" for="user-add-phone">
+                            <div class="mdl-card__actions mdl-card--border mdl-js-ripple-effect">
+                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effecth" href="mailto:{{services.google.email}}">
+                                    <i class="material-icons" style="vertical-align:center; margin-right: 10px">settings_phone</i>    
                                     Add Number
-                                    </div>
+                        
+                                </a>
+                    </div>
                             {{/if}}
                         {{/if}}
-                  </div>
+                    
+                    
                 </div>
             {{/if}}
         {{/each}}
