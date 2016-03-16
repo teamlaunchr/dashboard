@@ -35,6 +35,15 @@
             
             {{else}}
                 {{#if isEventsTab}}
+                
+                {{else}}
+                    {{#if isResourcesTa}}
+            
+                    {{else}}
+                        {{#if isYourTeamTab}}
+                            {{> yourteam}}
+                        {{/if}}
+                    {{/if}}
                 {{/if}}
             {{/if}}
         </main>
