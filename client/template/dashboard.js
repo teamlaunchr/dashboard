@@ -63,6 +63,7 @@ if(Meteor.isClient) {
         
         "click .nav-signout": function() {
             var dialog = document.querySelector('dialog');
+            dialogPolyfill.registerDialog(dialog);
             dialog.showModal();
         },
         
@@ -71,11 +72,13 @@ if(Meteor.isClient) {
                 
             });
             var dialog = document.querySelector('dialog');
+            dialogPolyfill.registerDialog(dialog);
             dialog.close();
         },
         
         "click .dismiss": function() {
             var dialog = document.querySelector('dialog');
+            dialogPolyfill.registerDialog(dialog);
             dialog.close();
         }
     });

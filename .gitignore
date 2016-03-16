@@ -1,0 +1,5 @@
+# Ignore server files
+mup.json
+settings.json
+
+
