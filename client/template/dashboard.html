@@ -1,0 +1,49 @@
+<template name="dashboard">
+        
+        {{initUserDetails}}
+    
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">{{getCurrentTab}}</span>
+                <div class="mdl-layout-spacer"></div>
+            </div>
+        </header>
+
+        <div class="mdl-layout__drawer">
+            <header class="dashboard-drawer-header mdl-color--grey-500">
+                <img src="{{userImage}}" class="dashboard-avatar">
+                <div class="avatar mdl-color-text--white">
+                    <span>{{userName}}</span>
+                    <span>{{userEmail}}</span>
+                    <div class="mdl-layout-spacer"></div>
+                </div>
+            </header>
+
+            <nav class="dashboard-navigation mdl-navigation">
+                <a class="mdl-navigation__link nav-updates"><i class="material-icons" role="presentation">flag</i>Updates</a>
+                <a class="mdl-navigation__link nav-events"><i class="material-icons" role="presentation">date_range</i>Events</a>
+                <a class="mdl-navigation__link nav-resources" ><i class="material-icons" role="presentation">perm_media</i>Resources</a>
+                <a class="mdl-navigation__link nav-team" ><i class="material-icons" role="presentation">face</i>Your Team</a>
+                <a class="mdl-navigation__link nav-signout" ><i class="material-icons" role="presentation">cancel</i>Sign Out</a>
+            </nav>
+        </div>
+
+        <main class="mdl-layout__content">
+            {{#if isUpdatesTab}}
+                
+                {{> updates}}
+            
+            {{else}}
+                {{#if isEventsTab}}
+                {{/if}}
+            {{/if}}
+        </main>
+    
+        <dialog class="mdl-dialog">
+            <p class="mdl-dialog__title">Are you sure you want to log out?</p>
+            <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button log-out">Yes</button>
+                <button type="button" class="mdl-button dismiss">No</button>
+                </div>
+        </dialog>
+</template>
