@@ -62,24 +62,11 @@ if(Meteor.isClient) {
         },
         
         "click .nav-signout": function() {
-            var dialog = document.querySelector('dialog');
-            dialogPolyfill.registerDialog(dialog);
-            dialog.showModal();
-        },
-        
-        "click .log-out": function() {
-            Meteor.logout(function(err) {
-                
-            });
-            var dialog = document.querySelector('dialog');
-            dialogPolyfill.registerDialog(dialog);
-            dialog.close();
-        },
-        
-        "click .dismiss": function() {
-            var dialog = document.querySelector('dialog');
-            dialogPolyfill.registerDialog(dialog);
-            dialog.close();
+            if(confirm("Are you sure you want to log out?") == true) {
+                Meteor.logout(function(err) {
+                    
+                });
+            }
         }
     });
 }

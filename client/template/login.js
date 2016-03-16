@@ -27,26 +27,14 @@ if(Meteor.isClient) {
                 );
                 
             } else {
-                var errorDialog = document.querySelector('dialog');
-                dialogPolyfill.registerDialog(errorDialog);
-                Session.set("errorMessage", "The Team Authorization Code you entered is not valid. Check your input and try again.");
-                errorDialog.showModal();
+                alert("The Team Authorization Code you entered is not valid. Check your input and try again.");
             }
-        }, 
-        
-        "click .error-ok": function() {
-            var errorDialog = document.querySelector('dialog');
-            dialogPolyfill.registerDialog(errorDialog);
-            errorDialog.close();
         },
         
         "click .login-button": function() {
             Meteor.loginWithGoogle({}, function(err) {
                     if(err.error === 'user-not-registered') {
-                        var errorDialog = document.querySelector('dialog');
-                        dialogPolyfill.registerDialog(errorDialog);
-                        Session.set("errorMessage", "User not found. Please register with a valid authorization code before you sign in.");
-                        errorDialog.showModal(); 
+                        alert("User not found. Please register with a valid authorization code before you sign in.");
                     }
                 }
             );
