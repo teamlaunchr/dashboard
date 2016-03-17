@@ -29,6 +29,10 @@ if(Meteor.isClient) {
         
         initUserDetails: function() {
             UserSession.set("team_id", Meteor.user().team_id);
+            if(!window.location.hash) {
+                    window.location = window.location + '#loaded';
+                    window.location.reload();
+            }
         }
     });
     
