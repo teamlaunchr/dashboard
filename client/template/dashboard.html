@@ -1,4 +1,10 @@
 <template name="dashboard">
+    
+        <script>
+          $( document ).ready(function() {
+            $('.mdl-navigation__link').click(function(){$('.mdl-layout__drawer').toggleClass('is-visible');});
+          });
+        </script>
         
         {{initUserDetails}}
     
