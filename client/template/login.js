@@ -27,14 +27,14 @@ if(Meteor.isClient) {
                 );
                 
             } else {
-                alert("The Team Authorization Code you entered is not valid. Check your input and try again.");
+                bootbox.alert("The Team Authorization Code you entered is not valid. Check your input and try again.");
             }
         },
         
         "click .login-button": function() {
             Meteor.loginWithGoogle({}, function(err) {
                     if(err.error === 'user-not-registered') {
-                        alert("User not found. Please register with a valid authorization code before you sign in.");
+                        bootbox.alert("User not found. Please register with a valid authorization code before you sign in.");
                     }
                 }
             );
