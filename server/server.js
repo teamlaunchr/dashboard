@@ -17,6 +17,14 @@ if (Meteor.isServer) {
        }}); 
     });
     
+    Meteor.publish("pdfs", function() {
+        return PDFs.find({},  {fields: {title: 1, link: 1, picture: 1}});
+    });
+    
+    Meteor.publish("websites", function() {
+        return Websites.find({},  {fields: {title: 1, link: 1, picture: 1}});
+    });
+    
     // Verify User has a team before adding it to the db
     Accounts.onCreateUser((options, user) => {
         if (! user.services.google) {

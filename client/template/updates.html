@@ -1,6 +1,6 @@
 <template name="updates">    
 <h1 class="mdl-layout__title updates-title">Active Updates</h1>
-<div class="mdl-card__actions mdl-card--border"> </div>
+<hr class="mdl-card--border">
 <div class="mdl-grid">
     {{#each getUpdates}}
         {{#if isUpdateActive}}
@@ -21,9 +21,9 @@
     {{/each}}
 </div>
 
-<div class="mdl-card__actions mdl-card--border"> </div>
+<hr class="mdl-card--border">
 <h1 class="mdl-layout__title updates-title">Dismissed Updates</h1>
-<div class="mdl-card__actions mdl-card--border"> </div>
+<hr class="mdl-card--border">
 <div class="mdl-grid">
     {{#each getUpdates}}
         {{#if isUpdateDismissed}}
