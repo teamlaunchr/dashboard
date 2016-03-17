@@ -11,10 +11,10 @@
 
         <div class="mdl-layout__drawer">
             <header class="dashboard-drawer-header mdl-color--grey-500">
-                <img src="{{userImage}}" class="dashboard-avatar">
+                <img src="{{currentUser.services.google.picture}}" class="dashboard-avatar">
                 <div class="avatar mdl-color-text--white">
-                    <span>{{userName}}</span>
-                    <span>{{userEmail}}</span>
+                    <span>{{currentUser.services.google.name}}</span>
+                    <span>{{currentUser.services.google.email}}</span>
                     <div class="mdl-layout-spacer"></div>
                 </div>
             </header>

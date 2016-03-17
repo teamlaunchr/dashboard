@@ -6,7 +6,7 @@ if (Meteor.isServer) {
     });
     
     Meteor.publish('allUsers', function() {
-        cursor = Meteor.users.find({}, {fields: {_id: 1, username: 1, name: 1, emails: 1, services: 1, team_id: 1}});
+        cursor = Meteor.users.find({}, {fields: {_id: 1, username: 1, name: 1, emails: 1, services: 1, team_id: 1, phone: 1}});
         return cursor;
     });
     

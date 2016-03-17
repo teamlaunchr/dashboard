@@ -7,18 +7,6 @@ if(Meteor.isClient) {
     Session.set("currentTab", "Updates");    
     
     Template.dashboard.helpers({
-       "userName": function() {
-            return Meteor.user().services.google.name;
-       },
-        
-        "userEmail": function() {
-            return Meteor.user().services.google.email;
-        },
-        
-        "userImage": function() {
-            return Meteor.user().services.google.picture;
-        },
-        
         isEventsTab: function() {
             return Session.get("currentTab") === "Events";
         },
@@ -62,11 +50,17 @@ if(Meteor.isClient) {
         },
         
         "click .nav-signout": function() {
-            if(confirm("Are you sure you want to log out?") == true) {
-                Meteor.logout(function(err) {
-                    
-                });
-            }
+            
+            console.log("click event");
+            bootbox.confirm("Are you sure you want to log out?", function(result) {
+                console.log(result);
+                
+              if(result) {
+                  Meteor.logout(function(err) {
+                      
+                  });
+              }
+            }); 
         }
     });
 }
